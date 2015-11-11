@@ -1,11 +1,6 @@
 <div class="page-header">
-  <h1>{{model.character.name}}</h1>
-</div>
-<div class="page-header">
   <h2>New Resource</h2>
 </div>
-
-{{log model}}
 
 {{#bs-form action="submit"}}
   {{#bs-form-group}}
@@ -23,6 +18,5 @@
   {{bs-button icon="glyphicon glyphicon-remove" defaultText="Cancel" type="danger"  buttonType="cancel"}}
   {{bs-button icon="glyphicon glyphicon-ok" defaultText="Create" type="primary" buttonType="submit"}}
 {{/bs-form}}
-
 
 {{outlet}}

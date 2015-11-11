@@ -1,65 +1,10 @@
 <div class="page-header">
-  <h1><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{model.name}}</h1>
+  <h1>
+    {{#link-to 'character' model}}
+      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      {{model.name}}
+    {{/link-to}}
+  </h1>
 </div>
 
-{{#bs-button action="delete" type="danger" icon="glyphicon glyphicon-trash"}}
-  Delete {{model.name}}
-{{/bs-button}}
-
-
-<div class="page-header">
-  <h2>Resources</h2>
-</div>
-
-<div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow={{model.resourceLevel}} aria-valuemin="0" aria-valuemax="100" style="width: {{model.resourceLevel}}%;"></div>
-</div>
-
-<ul class="list-group resources">
-  {{#each model.resources as |resource|}}
-    <li class="list-group-item resource">
-      <h4 class="media-heading">
-        {{#link-to 'character.resources.show' model resource}}
-          {{resource.name}} <small>{{resource.current}}/{{resource.max}} weight: {{resource.weight}}</small>
-        {{/link-to}}
-      </h4>
-      <div class="row">
-        <div class="col-md-1">
-          {{bs-button action="increment" value=resource type="success" icon="glyphicon glyphicon-plus"}}
-          {{bs-button action="decrement" value=resource type="success" icon="glyphicon glyphicon-minus"}}
-        </div>
-        <div class="col-md-11">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow={{resource.percent}} aria-valuemin="0" aria-valuemax="100" style="width: {{resource.percent}}%;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  {{/each}}
-</ul>
-
-{{#bs-button action="addResource" type="primary" icon="glyphicon glyphicon-plus"}}
-  Add resource
-{{/bs-button}}
-
-
-<div class="page-header">
-  <h2>Parties</h2>
-</div>
-
-<ul class="list-group parties">
-  {{#each model.parties as |party|}}
-    <li class="list-group-item party">
-      <h4 class="media-heading">{{#link-to "party" party}}{{party.name}}{{/link-to}}</h4>
-      <div class="row">
-        <div class="col-md-11">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow={{party.resourceLevel}} aria-valuemin="0" aria-valuemax="100" style="width: {{party.resourceLevel}}%;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-  {{/each}}
-</ul>
+{{outlet}}
