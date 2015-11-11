@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>Characters <small>{{model.length}}</small></h1>
+</div>
+<ul class="list-group">
+  {{#each model as |character|}}
+    <li class="list-group-item">
+      {{#link-to 'character.show' character.id}}
+        {{character.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+{{#bs-button action="create" type="primary" icon="glyphicon glyphicon-plus"}}
+  Create
+{{/bs-button}}
+{{outlet}}

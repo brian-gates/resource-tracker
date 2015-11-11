@@ -1,0 +1,6 @@
+.resources .resource h4 small {
+  visibility: hidden;
+}
+.resources .resource:hover h4 small {
+  visibility: visible;
+}

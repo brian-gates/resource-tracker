@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>{{model.character.name}}</h1>
+</div>
+<div class="page-header">
+  <h2>New Resource</h2>
+</div>
+
+{{log model}}
+
+{{#bs-form action="submit"}}
+  {{#bs-form-group}}
+    <label class="control-label">Name</label>
+    {{bs-input type="text" hint="HP" value=model.name}}
+  {{/bs-form-group}}
+  {{#bs-form-group}}
+    <label class="control-label">Max</label>
+    {{bs-input type="number" value=model.max}}
+  {{/bs-form-group}}
+  {{#bs-form-group}}
+    <label class="control-label">Weight</label>
+    {{bs-input type="number" value=model.weight}}
+  {{/bs-form-group}}
+  {{bs-button icon="glyphicon glyphicon-remove" defaultText="Cancel" type="danger"  buttonType="cancel"}}
+  {{bs-button icon="glyphicon glyphicon-ok" defaultText="Create" type="primary" buttonType="submit"}}
+{{/bs-form}}
+
+
+{{outlet}}

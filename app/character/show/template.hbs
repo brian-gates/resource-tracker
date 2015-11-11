@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h1>{{model.name}}</h1>
+</div>
+
+<div class="page-header">
+  <h2>Exhaustion</h2>
+</div>
+
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow={{exhaustion}} aria-valuemin="0" aria-valuemax="100" style="width: {{exhaustion}}%;"></div>
+</div>
+
+{{#bs-button action="delete" type="danger" icon="glyphicon glyphicon-trash"}}
+  Delete {{model.name}}
+{{/bs-button}}
+
+
+<div class="page-header">
+  <h2>Resources</h2>
+</div>
+
+<ul class="list-group resources">
+  {{#each model.resources as |resource|}}
+    <li class="list-group-item resource">
+      <h4 class="media-heading">{{resource.name}} <small>{{resource.current}}/{{resource.max}} weight: {{resource.weight}}</small></h4>
+      <div class="row">
+        <div class="col-md-1">
+          {{bs-button action="increment" value=resource type="success" icon="glyphicon glyphicon-plus"}}
+          {{bs-button action="decrement" value=resource type="success" icon="glyphicon glyphicon-minus"}}
+        </div>
+        <div class="col-md-11">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow={{resource.percent}} aria-valuemin="0" aria-valuemax="100" style="width: {{resource.percent}}%;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+
+{{#bs-button action="addResource" type="primary" icon="glyphicon glyphicon-plus"}}
+  Add resource
+{{/bs-button}}
+
+
