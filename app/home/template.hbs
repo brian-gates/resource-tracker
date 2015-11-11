@@ -1,0 +1,51 @@
+<div class="jumbotron">
+  <h1>D&D 5e Resource Tracker</h1>
+  <p>In response to a <a href="https://www.reddit.com/r/dndnext/comments/3s5fgn/angry_rants_dd_is_too_easy_the_mad_adventurers/">Reddit post</a> and blog post about <a href="http://www.madadventurers.com/angry-rants-dd-is-too-easy/">D&D being too easy</a>, I was inspired to create a tool to help bring about more transparency to just how taxed a party can be.</p>
+</div>
+<div class="bs-callout bs-callout-danger">
+  <h4><span class="glyphicon glyphicon-warning-sign"></span> This is an early prototype.</h4>
+  <p>Expect things to break and data to be lost.</p>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Get Started</h3>
+      </div>
+      <div class="panel-body">
+        <p>Get tracking!</p>
+        <p>
+          {{#bs-button action="createCharacter" type="primary" icon="glyphicon glyphicon-plus"}}
+            Character
+          {{/bs-button}}
+
+          {{#bs-button action="createParty" type="primary" icon="glyphicon glyphicon-plus"}}
+            Party
+          {{/bs-button}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Give Feedback</h3>
+      </div>
+      <div class="panel-body">
+        <p>Tell me what you think!</p>
+        <p>
+          <a href="https://github.com/brian-gates/resource-tracker/issues" class="btn btn-primary">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            Submit an Issue
+          </a>
+          <a href="https://github.com/brian-gates/resource-tracker/issues" class="btn btn-primary">
+            <span class="glyphicon glyphicon-comment"></span>
+            Chat
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
