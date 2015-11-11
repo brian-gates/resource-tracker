@@ -1,5 +1,7 @@
 # Resource-tracker
 
+[![Join the chat at https://gitter.im/brian-gates/resource-tracker](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/brian-gates/resource-tracker?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 http://resource-tracker.s3-website-us-west-1.amazonaws.com/
 
 This README outlines the details of collaborating on this Ember application.
