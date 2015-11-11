@@ -6,6 +6,9 @@ export default Ember.Route.extend({
   },
   actions: {
     delete() {
+      if(!confirm('Are you sure?')) {
+        return;
+      }
       return this.get('currentModel').destroyRecord()
         .then(()=>{
           this.transitionTo('characters');

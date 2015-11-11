@@ -15,8 +15,16 @@
     <label class="control-label">Weight</label>
     {{bs-input type="number" value=model.weight}}
   {{/bs-form-group}}
-  {{bs-button icon="glyphicon glyphicon-remove" defaultText="Cancel" type="danger"  buttonType="cancel"}}
-  {{bs-button icon="glyphicon glyphicon-ok" defaultText="Create" type="primary" buttonType="submit"}}
+  {{bs-button
+    icon        = "glyphicon glyphicon-remove"
+    action      = "cancel"
+    defaultText = "Cancel"
+    type        = "danger"}}
+  {{bs-button
+    icon        = "glyphicon glyphicon-ok"
+    defaultText = "Create"
+    type        = "primary"
+    buttonType  = "submit"}}
 {{/bs-form}}
 
 {{outlet}}
