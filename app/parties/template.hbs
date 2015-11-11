@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h1>Parties <small>{{model.length}}</small></h1>
+</div>
+<ul class="list-group">
+  {{#each model as |party|}}
+    <li class="list-group-item">
+      {{#link-to 'party.show' party.id}}
+        {{party.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+{{#bs-button action="create" type="primary" icon="glyphicon glyphicon-plus"}}
+  Create
+{{/bs-button}}
+{{outlet}}

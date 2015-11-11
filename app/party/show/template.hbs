@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>{{model.name}}</h1>
+</div>
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow={{model.resourceLevel}} aria-valuemin="0" aria-valuemax="100" style="width: {{model.resourceLevel}}%;"></div>
+</div>
+
+{{#bs-button action="delete" type="danger" icon="glyphicon glyphicon-trash"}}
+  Delete {{model.name}}
+{{/bs-button}}
+
+
+<div class="page-header">
+  <h2>Characters <small>{{model.characters.length}}</small></h2>
+</div>
+
+<ul class="list-group characters">
+  {{#each model.characters as |character|}}
+    <li class="list-group-item character">
+      <h4 class="media-heading">{{#link-to 'character.show' character}}{{character.name}}{{/link-to}}</h4>
+      <div class="row">
+        <div class="col-md-11">
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow={{character.resourceLevel}} aria-valuemin="0" aria-valuemax="100" style="width: {{character.resourceLevel}}%;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+
+{{#bs-button action="addCharacter" type="primary" icon="glyphicon glyphicon-plus"}}
+  Add character
+{{/bs-button}}
+
+

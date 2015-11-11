@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h2>New Party</h2>
+</div>
+{{#bs-form action="submit"}}
+  {{#bs-form-group}}
+    <label class="control-label">Name</label>
+    {{bs-input type="text" value=model.name}}
+  {{/bs-form-group}}
+  {{bs-button icon="glyphicon glyphicon-remove" defaultText="Cancel" type="danger"  buttonType="cancel"}}
+  {{bs-button icon="glyphicon glyphicon-ok" defaultText="Create" type="primary" buttonType="submit"}}
+{{/bs-form}}
+
+
+{{outlet}}

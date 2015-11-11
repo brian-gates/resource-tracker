@@ -1,10 +1,14 @@
 <div class="page-header">
-  <h1>Characters <small>{{model.length}}</small></h1>
+  <h1>
+    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    Characters <small>{{model.length}}</small>
+  </h1>
 </div>
 <ul class="list-group">
   {{#each model as |character|}}
     <li class="list-group-item">
       {{#link-to 'character.show' character.id}}
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
         {{character.name}}
       {{/link-to}}
     </li>

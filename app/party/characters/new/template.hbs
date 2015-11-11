@@ -1,0 +1,15 @@
+{{#bs-form action="submit"}}
+  {{#bs-form-group}}
+    <label class="control-label">Search</label>
+    {{bs-input type="text" value=name}}
+  {{/bs-form-group}}
+  <ul class="list-group characters">
+    {{#each model as |character|}}
+      <li class="list-group-item character">
+        {{bs-button action="addCharacter" value=character icon="glyphicon glyphicon-plus" type="success"}}
+        {{character.name}}
+      </li>
+    {{/each}}
+  </ul>
+{{/bs-form}}
+{{bs-button text="Done" action="done" value=character icon="glyphicon glyphicon-done" type="primary"}}
